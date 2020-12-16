@@ -1,0 +1,20 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "salesdataset",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"script": "source(output(\n\t\tOrderDate as string,\n\t\tRegion as string,\n\t\tRep as string,\n\t\tItem as string,\n\t\tUnits as short,\n\t\tUnitCost as double,\n\t\tTotal as double\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1"
+		}
+	}
+}
