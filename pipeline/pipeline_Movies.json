@@ -82,6 +82,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "STARRING ACTORS",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "STARRING_ACTORS",
 									"type": "String",
@@ -125,6 +130,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "FORMAT",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "FORMAT1",
 									"type": "String",
