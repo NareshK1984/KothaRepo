@@ -13,8 +13,12 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
-			"script": "source(output(\n\t\tOrderDate as string,\n\t\tRegion as string,\n\t\tRep as string,\n\t\tItem as string,\n\t\tUnits as short,\n\t\tUnitCost as double,\n\t\tTotal as double\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1"
+			"transformations": [
+				{
+					"name": "ConditionalSplit1"
+				}
+			],
+			"script": "source(output(\n\t\tOrderDate as string,\n\t\tRegion as string,\n\t\tRep as string,\n\t\tItem as string,\n\t\tUnits as short,\n\t\tUnitCost as double,\n\t\tTotal as double\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 split(isNull(toDate(OrderDate,'dd-mm-yyyy')),\n\tdisjoint: false) ~> ConditionalSplit1@(Badrows, Goodrows)"
 		}
 	}
 }
