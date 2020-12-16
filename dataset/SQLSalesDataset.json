@@ -1,0 +1,45 @@
+{
+	"name": "SQLSalesDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLMovies",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "OrderDate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Region",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rep",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Item",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Units",
+				"type": "nvarchar"
+			},
+			{
+				"name": "UnitCost",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Total",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sale"
+		}
+	}
+}
