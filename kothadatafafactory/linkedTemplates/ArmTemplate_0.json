@@ -128,7 +128,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline_movies')]",
+			"name": "[concat(parameters('factoryName'), '/pipeline_Movies')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -150,7 +150,7 @@
 								"type": "DelimitedTextSource",
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
+									"recursive": false,
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -166,8 +166,9 @@
 								"mappings": [
 									{
 										"source": {
+											"name": "NO.",
 											"type": "String",
-											"ordinal": 1
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "MOVIE_NO",
@@ -177,8 +178,9 @@
 									},
 									{
 										"source": {
+											"name": "YEAR",
 											"type": "String",
-											"ordinal": 2
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "YEAR",
@@ -188,8 +190,9 @@
 									},
 									{
 										"source": {
+											"name": "TITLE",
 											"type": "String",
-											"ordinal": 3
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "TITLE",
@@ -199,8 +202,9 @@
 									},
 									{
 										"source": {
+											"name": "REVIEW",
 											"type": "String",
-											"ordinal": 4
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "REVIEW",
@@ -210,8 +214,9 @@
 									},
 									{
 										"source": {
+											"name": "STARRING ACTORS",
 											"type": "String",
-											"ordinal": 5
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "STARRING_ACTORS",
@@ -221,8 +226,9 @@
 									},
 									{
 										"source": {
+											"name": "DIRECTOR",
 											"type": "String",
-											"ordinal": 6
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "DIRECTOR",
@@ -232,8 +238,9 @@
 									},
 									{
 										"source": {
+											"name": "GENRE",
 											"type": "String",
-											"ordinal": 7
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "GENRE",
@@ -243,8 +250,9 @@
 									},
 									{
 										"source": {
+											"name": "RATING",
 											"type": "String",
-											"ordinal": 8
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "RATING",
@@ -254,8 +262,9 @@
 									},
 									{
 										"source": {
+											"name": "FORMAT",
 											"type": "String",
-											"ordinal": 9
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "FORMAT1",
@@ -265,8 +274,9 @@
 									},
 									{
 										"source": {
+											"name": "COMMENTS",
 											"type": "String",
-											"ordinal": 10
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "COMMENTS",
