@@ -11,6 +11,9 @@
 		"SQLMovies_connectionString": {
 			"value": ""
 		},
+		"saleslink_connectionString": {
+			"value": ""
+		},
 		"containerUri": {
 			"value": ""
 		},

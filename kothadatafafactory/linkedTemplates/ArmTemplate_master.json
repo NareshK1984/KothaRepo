@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'SQLMovies'"
 		},
+		"saleslink_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'saleslink'"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -47,6 +51,9 @@
 					},
 					"SQLMovies_connectionString": {
 						"value": "[parameters('SQLMovies_connectionString')]"
+					},
+					"saleslink_connectionString": {
+						"value": "[parameters('saleslink_connectionString')]"
 					}
 				}
 			},
