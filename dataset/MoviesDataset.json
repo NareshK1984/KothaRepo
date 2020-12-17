@@ -19,33 +19,43 @@
 		},
 		"schema": [
 			{
+				"name": "NO.",
 				"type": "String"
 			},
 			{
+				"name": "YEAR",
 				"type": "String"
 			},
 			{
+				"name": "TITLE",
 				"type": "String"
 			},
 			{
+				"name": "REVIEW",
 				"type": "String"
 			},
 			{
+				"name": "STARRING ACTORS",
 				"type": "String"
 			},
 			{
+				"name": "DIRECTOR",
 				"type": "String"
 			},
 			{
+				"name": "GENRE",
 				"type": "String"
 			},
 			{
+				"name": "RATING",
 				"type": "String"
 			},
 			{
+				"name": "FORMAT",
 				"type": "String"
 			},
 			{
+				"name": "COMMENTS",
 				"type": "String"
 			}
 		]
