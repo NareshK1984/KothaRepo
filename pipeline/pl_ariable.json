@@ -5,7 +5,7 @@
 			"tablename": {
 				"type": "array",
 				"defaultValue": [
-					"select * from sale"
+					"select * from dbo.sale"
 				]
 			}
 		},
