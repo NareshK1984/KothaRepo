@@ -1,6 +1,20 @@
 {
 	"name": "pl_ariable",
 	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.tablename",
+						"type": "Expression"
+					}
+				}
+			}
+		],
 		"parameters": {
 			"tablename": {
 				"type": "array",
