@@ -82,10 +82,7 @@
 									"type": "DelimitedTextSink",
 									"storeSettings": {
 										"type": "AzureBlobStorageWriteSettings",
-										"copyBehavior": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
+										"copyBehavior": "addDynamicContent"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
