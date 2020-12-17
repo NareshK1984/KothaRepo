@@ -1,6 +1,11 @@
 {
 	"name": "pipeline_filenme",
 	"properties": {
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
