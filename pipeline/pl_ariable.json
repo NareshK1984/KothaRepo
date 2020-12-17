@@ -1,6 +1,14 @@
 {
 	"name": "pl_ariable",
 	"properties": {
+		"parameters": {
+			"tablename": {
+				"type": "array",
+				"defaultValue": [
+					"select * from sale"
+				]
+			}
+		},
 		"annotations": []
 	}
 }
