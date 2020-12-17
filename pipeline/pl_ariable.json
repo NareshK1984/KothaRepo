@@ -9,17 +9,17 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.tablename",
+						"value": "@variables('tablelist')",
 						"type": "Expression"
 					}
 				}
 			}
 		],
-		"parameters": {
-			"tablename": {
-				"type": "array",
+		"variables": {
+			"tablelist": {
+				"type": "Array",
 				"defaultValue": [
-					"select * from dbo.sale"
+					"select * from sale"
 				]
 			}
 		},
