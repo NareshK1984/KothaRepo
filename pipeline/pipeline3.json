@@ -29,7 +29,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "@concat('select count(1) as count from',item())",
+										"value": "@concat('select count(1) as count from ',item())",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
