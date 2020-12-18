@@ -1,0 +1,14 @@
+{
+	"name": "pipeline3",
+	"properties": {
+		"variables": {
+			"Tablename": {
+				"type": "Array",
+				"defaultValue": [
+					"sale"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
