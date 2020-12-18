@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('tablelist')",
+						"value": "@variables('Tablename')",
 						"type": "Expression"
 					},
 					"activities": [
