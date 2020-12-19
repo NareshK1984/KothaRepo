@@ -39,7 +39,9 @@
 										},
 										"sink": {
 											"type": "AzureSqlSink",
-											"tableOption": "autoCreate"
+											"preCopyScript": "delete from dbo.population1",
+											"tableOption": "autoCreate",
+											"disableMetricsCollection": false
 										},
 										"enableStaging": false,
 										"enableSkipIncompatibleRow": true,
