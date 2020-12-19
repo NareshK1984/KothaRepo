@@ -133,7 +133,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SQLSalesDataset",
+						"referenceName": "ds_excel_output",
 						"type": "DatasetReference"
 					}
 				]
