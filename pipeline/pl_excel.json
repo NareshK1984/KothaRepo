@@ -29,6 +29,128 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "NO.",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MOVIE_NO",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "YEAR",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TITLE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TITLE",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "REVIEW",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "REVIEW",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "STARRING ACTORS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "STARRING_ACTORS",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DIRECTOR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DIRECTOR",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GENRE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GENRE",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RATING",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RATING",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FORMAT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FORMAT1",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "COMMENTS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "COMMENTS",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
