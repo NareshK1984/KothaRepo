@@ -44,6 +44,80 @@
 					},
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "DISTRICT_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DISTRICT_CODE",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "STATE_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "INDIA_STATE",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Rural",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rural",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Persons",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Persons",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Males",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Males",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Females",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Females",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -59,7 +133,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "SQLSalesDataset",
 						"type": "DatasetReference"
 					}
 				]
