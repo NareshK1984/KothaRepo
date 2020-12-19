@@ -8,10 +8,9 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Sheet1",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Movies.xlsx",
+				"fileName": "Population.xlsx",
 				"container": "nareshcontainer"
 			},
 			"firstRowAsHeader": true
