@@ -1,0 +1,45 @@
+{
+	"name": "empscdtype2tgt",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "employeeSCDtype2tgt",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Emp_sid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Emp_No",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Emp_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Department",
+				"type": "nvarchar"
+			},
+			{
+				"name": "City",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LastUpdated_Date",
+				"type": "date"
+			},
+			{
+				"name": "Actie",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Dim_employee"
+		}
+	}
+}
