@@ -33,9 +33,12 @@
 				},
 				{
 					"name": "Join1"
+				},
+				{
+					"name": "Lookup1"
 				}
 			],
-			"script": "source(output(\n\t\tEmp_sid as string,\n\t\tEmp_No as string,\n\t\tEmp_Name as string,\n\t\tDepartment as string,\n\t\tCity as string,\n\t\tLastUpdated_Date as date,\n\t\tActie as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource(output(\n\t\tMaxKey as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'select max(emp_sid) as MaxKey from Dim_Employee\\n',\n\tformat: 'query') ~> Maxkey\nsource(output(\n\t\t{Emp_No } as string,\n\t\t{Emp Name } as string,\n\t\t{Department } as string,\n\t\tCity as string,\n\t\tLastUpdated_Date as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> stg\nsource1 select(mapColumn(\n\t\tEmp_sid,\n\t\tEmp_No,\n\t\tEmp_Name,\n\t\tDepartment,\n\t\tCity,\n\t\tLastUpdated_Date,\n\t\tActie\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Selectemp\nstg, Maxkey join(ERROR_FUNCTION('1=1'),\n\tjoinType:'cross',\n\tbroadcast: 'auto')~> Join1"
+			"script": "source(output(\n\t\tEmp_sid as string,\n\t\tEmp_No as string,\n\t\tEmp_Name as string,\n\t\tDepartment as string,\n\t\tCity as string,\n\t\tLastUpdated_Date as date,\n\t\tActie as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource(output(\n\t\tMaxKey as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'select max(emp_sid) as MaxKey from Dim_Employee\\n',\n\tformat: 'query') ~> Maxkey\nsource(output(\n\t\t{Emp_No } as string,\n\t\t{Emp Name } as string,\n\t\t{Department } as string,\n\t\tCity as string,\n\t\tLastUpdated_Date as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> stg\nsource1 select(mapColumn(\n\t\tEmp_sid,\n\t\tEmp_No,\n\t\tEmp_Name,\n\t\tDepartment,\n\t\tCity,\n\t\tLastUpdated_Date,\n\t\tActie\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Selectemp\nstg, Maxkey join(1==1,\n\tjoinType:'cross',\n\tbroadcast: 'auto')~> Join1\nJoin1, Selectemp lookup({Emp_No } == Emp_No,\n\tmultiple: false,\n\tpickup: 'first',\n\tasc(Emp_No, true),\n\tbroadcast: 'auto')~> Lookup1"
 		}
 	}
 }
