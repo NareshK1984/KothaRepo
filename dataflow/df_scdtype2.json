@@ -10,15 +10,32 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "empscdtype2tgt",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				},
+				{
+					"dataset": {
+						"referenceName": "empscdtype2",
+						"type": "DatasetReference"
+					},
+					"name": "stg"
 				}
 			],
 			"sinks": [],
 			"transformations": [
 				{
 					"name": "Selectemp"
+				},
+				{
+					"name": "Join1"
 				}
 			],
-			"script": "source(output(\n\t\tEmp_sid as string,\n\t\tEmp_No as string,\n\t\tEmp_Name as string,\n\t\tDepartment as string,\n\t\tCity as string,\n\t\tLastUpdated_Date as date,\n\t\tActie as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource1 select(mapColumn(\n\t\tEmp_sid,\n\t\tEmp_No,\n\t\tEmp_Name,\n\t\tDepartment,\n\t\tCity,\n\t\tLastUpdated_Date,\n\t\tActie\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Selectemp"
+			"script": "source(output(\n\t\tEmp_sid as string,\n\t\tEmp_No as string,\n\t\tEmp_Name as string,\n\t\tDepartment as string,\n\t\tCity as string,\n\t\tLastUpdated_Date as date,\n\t\tActie as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource(output(\n\t\tMaxKey as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: 'select max(emp_sid) as MaxKey from Dim_Employee\\n',\n\tformat: 'query') ~> source2\nsource(output(\n\t\t{Emp_No } as string,\n\t\t{Emp Name } as string,\n\t\t{Department } as string,\n\t\tCity as string,\n\t\tLastUpdated_Date as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> stg\nsource1 select(mapColumn(\n\t\tEmp_sid,\n\t\tEmp_No,\n\t\tEmp_Name,\n\t\tDepartment,\n\t\tCity,\n\t\tLastUpdated_Date,\n\t\tActie\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Selectemp\nstg join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1"
 		}
 	}
 }
