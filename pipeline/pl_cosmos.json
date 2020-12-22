@@ -18,13 +18,24 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"queryTimeout": "02:00:00",
+						"isolationLevel": "ReadCommitted",
 						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "CosmosDbSqlApiSink",
 						"writeBehavior": "insert"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"sink": {
+									"path": "$"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
