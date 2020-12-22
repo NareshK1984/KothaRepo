@@ -30,8 +30,30 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
+								"source": {
+									"name": "DISTRICT_CODE",
+									"type": "String"
+								},
 								"sink": {
-									"path": "$"
+									"path": "a1"
+								}
+							},
+							{
+								"source": {
+									"name": "INDIA_STATE",
+									"type": "String"
+								},
+								"sink": {
+									"path": "a2"
+								}
+							},
+							{
+								"source": {
+									"name": "Rural",
+									"type": "String"
+								},
+								"sink": {
+									"path": "a3"
 								}
 							}
 						]
