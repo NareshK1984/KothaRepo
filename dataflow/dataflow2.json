@@ -12,13 +12,21 @@
 					"name": "source"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "Pivot"
 				}
 			],
-			"script": "source(output(\n\t\tOrderDate as date 'mm-dd-yyyy',\n\t\tRegion as string,\n\t\tRep as string,\n\t\tItem as string,\n\t\tUnits as double,\n\t\tUnitCost as double,\n\t\tTotal as double\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source\nsource pivot(groupBy(bhbhj = Region),\n\tpivotBy(Region),\n\tnbn = Rep,\n\tcolumnNaming: 'hi$N$V',\n\tlateral: false,\n\tpartitionBy('roundRobin', 2)) ~> Pivot"
+			"script": "source(output(\n\t\tOrderDate as date 'mm-dd-yyyy',\n\t\tRegion as string,\n\t\tRep as string,\n\t\tItem as string,\n\t\tUnits as double,\n\t\tUnitCost as double,\n\t\tTotal as double\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source\nsource pivot(groupBy(bhbhj = Region),\n\tpivotBy(Region),\n\tnbn = sum(Units),\n\tcolumnNaming: 'hi$N$V',\n\tlateral: false,\n\tpartitionBy('roundRobin', 2)) ~> Pivot\nPivot sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError') ~> sink1"
 		}
 	}
 }
