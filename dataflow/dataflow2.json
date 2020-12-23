@@ -18,7 +18,7 @@
 					"name": "Pivot1"
 				}
 			],
-			"script": "source(output(\n\t\tOrderDate as string,\n\t\tRegion as string,\n\t\tRep as string,\n\t\tItem as string,\n\t\tUnits as double,\n\t\tUnitCost as double,\n\t\tTotal as double\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 pivot(columnNaming: '$N$V',\n\tlateral: true) ~> Pivot1"
+			"script": "source(output(\n\t\tOrderDate as date 'mm-dd-yyyy',\n\t\tRegion as string,\n\t\tRep as string,\n\t\tItem as string,\n\t\tUnits as double,\n\t\tUnitCost as double,\n\t\tTotal as double\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 pivot(pivotBy(OrderDate),\n\tcolumnNaming: '$N$V',\n\tlateral: true) ~> Pivot1"
 		}
 	}
 }
