@@ -9,12 +9,12 @@
 						"referenceName": "ds_unpivot",
 						"type": "DatasetReference"
 					},
-					"name": "src_unpiot"
+					"name": "srcunpivot"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
-			"script": "source(output(\n\t\tReg as string,\n\t\thinbnBinder as integer,\n\t\thinbnPen as integer,\n\t\thinbnPencil as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> src_unpiot"
+			"script": "source(output(\n\t\tReg as string,\n\t\thinbnBinder as integer,\n\t\thinbnPen as integer,\n\t\thinbnPencil as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> srcunpivot"
 		}
 	}
 }
