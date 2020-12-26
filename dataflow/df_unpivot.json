@@ -9,7 +9,7 @@
 						"referenceName": "ds_unpivot",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "src_unpiot"
 				}
 			],
 			"sinks": [],
@@ -18,7 +18,7 @@
 					"name": "Unpivot1"
 				}
 			],
-			"script": "source(output(\n\t\tReg as string,\n\t\thinbnBinder as integer,\n\t\thinbnPen as integer,\n\t\thinbnPencil as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 unpivot(output(\n\t\t\n\t),\n\tlateral: true,\n\tignoreNullPivots: false) ~> Unpivot1"
+			"script": "source(output(\n\t\tReg as string,\n\t\thinbnBinder as integer,\n\t\thinbnPen as integer,\n\t\thinbnPencil as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> src_unpiot\nsrc_unpiot unpivot(output(\n\t\t\n\t),\n\tlateral: true,\n\tignoreNullPivots: false) ~> Unpivot1"
 		}
 	}
 }
