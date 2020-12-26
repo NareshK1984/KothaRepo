@@ -13,12 +13,8 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "Unpivot1"
-				}
-			],
-			"script": "source(output(\n\t\tSalesChannel as string,\n\t\tBeverages as integer,\n\t\tchocolates as integer,\n\t\tbuisctes as integer,\n\t\tcooldrinks as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpartitionBy('hash', 1)) ~> source1\nsource1 unpivot(output(\n\t\t\n\t),\n\tlateral: true,\n\tignoreNullPivots: false) ~> Unpivot1"
+			"transformations": [],
+			"script": "source(output(\n\t\tSalesChannel as string,\n\t\tBeverages as integer,\n\t\tchocolates as integer,\n\t\tbuisctes as integer,\n\t\tcooldrinks as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpartitionBy('hash', 1)) ~> source1"
 		}
 	}
 }
