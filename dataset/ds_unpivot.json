@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "unpivot.csv",
+				"fileName": "Unpiot.csv",
 				"container": "unpivot"
 			},
 			"columnDelimiter": ",",
