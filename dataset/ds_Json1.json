@@ -1,0 +1,46 @@
+{
+	"name": "ds_Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Blb_json",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Satellitedetails.json",
+				"container": "nareshcontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"Products": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"modelname": {
+								"type": "string"
+							},
+							"manufacturer": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"pricerange": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
