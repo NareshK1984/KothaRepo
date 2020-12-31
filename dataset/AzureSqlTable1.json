@@ -10,7 +10,8 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "sale"
+			"table": "movies"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
