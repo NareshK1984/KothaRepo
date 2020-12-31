@@ -1,0 +1,62 @@
+{
+	"name": "pl_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "population1.xlsx",
+				"container": "nareshcontainer"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "NO.",
+				"type": "String"
+			},
+			{
+				"name": "YEAR",
+				"type": "String"
+			},
+			{
+				"name": "TITLE",
+				"type": "String"
+			},
+			{
+				"name": "REVIEW",
+				"type": "String"
+			},
+			{
+				"name": "STARRING ACTORS",
+				"type": "String"
+			},
+			{
+				"name": "DIRECTOR",
+				"type": "String"
+			},
+			{
+				"name": "GENRE",
+				"type": "String"
+			},
+			{
+				"name": "RATING",
+				"type": "String"
+			},
+			{
+				"name": "FORMAT",
+				"type": "String"
+			},
+			{
+				"name": "COMMENTS",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"name": "DS_NareshContainer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LN_NareshContainer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Satellitedetails.json",
+				"container": "nareshcontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"name": "pipeline_switch",
+	"properties": {
+		"parameters": {
+			"Action": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}

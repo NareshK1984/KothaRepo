@@ -1,0 +1,16 @@
+{
+	"name": "ds_excel_output",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLMovies",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "population1"
+		}
+	}
+}

@@ -1,0 +1,52 @@
+{
+	"name": "ds_pivot",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Blobcsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sales2.csv",
+				"container": "nareshcontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "OrderDate",
+				"type": "String"
+			},
+			{
+				"name": "Region",
+				"type": "String"
+			},
+			{
+				"name": "Rep",
+				"type": "String"
+			},
+			{
+				"name": "Item",
+				"type": "String"
+			},
+			{
+				"name": "Units",
+				"type": "String"
+			},
+			{
+				"name": "UnitCost",
+				"type": "String"
+			},
+			{
+				"name": "Total",
+				"type": "String"
+			}
+		]
+	}
+}

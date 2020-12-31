@@ -1,0 +1,27 @@
+{
+	"name": "df_unpivot",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_unpivot",
+						"type": "DatasetReference"
+					},
+					"name": "srcunpivot"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "Unpivot1"
+				},
+				{
+					"name": "Aggregate1"
+				}
+			],
+			"script": "source(output(\n\t\tReg as string,\n\t\thinbnBinder as integer,\n\t\thinbnPen as integer,\n\t\thinbnPencil as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> srcunpivot\nAggregate1 unpivot(output(\n\t\thi as string,\n\t\thinbnBinder as long,\n\t\thinbnPen as long\n\t),\n\tungroupBy(Reg),\n\tlateral: true,\n\tignoreNullPivots: false) ~> Unpivot1\nsrcunpivot aggregate(groupBy(Reg),\n\thinbnBinder = sum(hinbnBinder),\n\t\thinbnPen = sum(hinbnPen),\n\t\thinbnPencil = sum(hinbnPencil)) ~> Aggregate1"
+		}
+	}
+}
