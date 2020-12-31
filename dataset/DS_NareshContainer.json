@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "Satellitedetails.json",
 				"container": "nareshcontainer"
 			},
 			"columnDelimiter": ",",
